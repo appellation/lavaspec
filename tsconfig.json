@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"alwaysStrict": true,
+		"strict": true,
+		"outDir": "./dist/",
+		"moduleResolution": "node",
+		"module": "commonjs",
+		"lib": ["es7"],
+		"target": "es2017"
+	},
+	"include": ["./src", "./bin"]
+}
