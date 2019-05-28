@@ -1,3 +1,4 @@
+#!/user/bin/env node
 import Koa = require('koa');
 import logger = require('koa-logger');
 import { Amqp } from '@spectacles/brokers';
