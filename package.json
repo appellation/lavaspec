@@ -2,6 +2,7 @@
   "name": "lavaspec",
   "version": "1.0.0",
   "main": "index.js",
+  "bin": "./dist/bin/index.js",
   "scripts": {
     "prestart": "rimraf dist/* && tsc",
     "start:dev": "yarn prestart && env-cmd node dist/bin/index.js",
