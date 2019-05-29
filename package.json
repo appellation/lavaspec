@@ -4,9 +4,10 @@
   "main": "index.js",
   "bin": "./dist/bin/index.js",
   "scripts": {
-    "prestart": "rimraf dist/* && tsc",
+    "prestart": "yarn prepare",
     "start:dev": "yarn prestart && env-cmd node dist/bin/index.js",
-    "start": "node dist/bin/index.js"
+    "start": "node dist/bin/index.js",
+    "prepare": "rimraf dist/* && tsc"
   },
   "license": "MIT",
   "dependencies": {
