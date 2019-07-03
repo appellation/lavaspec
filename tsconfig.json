@@ -6,7 +6,8 @@
 		"moduleResolution": "node",
 		"module": "commonjs",
 		"lib": ["es7"],
-		"target": "es2017"
+		"target": "es2017",
+		"sourceMap": true
 	},
 	"include": ["./src", "./bin"]
 }

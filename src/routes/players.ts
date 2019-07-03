@@ -14,7 +14,8 @@ export enum PlayerStatus {
 	STOPPED,
 }
 
-export type PlayerContext<T = any> = ParameterizedContext<{ player: Player, queue: Queue }, T>;
+export type PlayerState = { player: Player, queue: Queue };
+export type PlayerContext<T = Router.IRouterParamContext<PlayerState>> = ParameterizedContext<PlayerState, T>;
 
 export default function(this: Client): Router {
 	const router = new Router();
@@ -65,10 +66,10 @@ export default function(this: Client): Router {
 				},
 			} = ctx;
 
+			if (body.channelID) await player.join(body.channelID);
+
 			switch (body.status) {
 			case PlayerStatus.PLAYING: {
-				if (body.channelID) await player.join(body.channelID);
-
 				if (body.track) {
 					try {
 						decodeTrack(body.track);

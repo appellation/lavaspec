@@ -1,6 +1,5 @@
 import * as Joi from '@hapi/joi';
 import * as Router from 'koa-router';
-import { Queue } from 'lavaqueue';
 import Client from '../Client';
 import validate from '../middleware/validate';
 import { PlayerContext } from './players';
@@ -8,13 +7,10 @@ import { PlayerContext } from './players';
 export default function(this: Client): Router {
 	const router = new Router();
 
-	router.get(
-		'/',
-		validate('query', Joi.object({
+	router.get('/', validate('query', Joi.object({
 			start: Joi.number().integer().positive().default(0),
 			end: Joi.number().integer().greater(Joi.ref('start')).default(10),
-		})),
-		async (ctx: PlayerContext) => {
+		})), async (ctx: PlayerContext) => {
 			const {
 				query: { start, end },
 				state: { queue },
@@ -51,23 +47,22 @@ export default function(this: Client): Router {
 		ctx.status = 200;
 	});
 
-	router.get(
-		'/:index',
-		validate('query', Joi.object({
-			index: [
-				Joi.string().allow('current'),
+	router.get('/:index', validate('query', Joi.object({
+			index: Joi.alternatives().try([
+				Joi.string().only('current'),
 				Joi.number().positive().integer(),
-			],
-		})),
-		async (ctx: PlayerContext) => {
-			const queue: Queue = ctx.state.queue;
+			]),
+		})), async (ctx: PlayerContext) => {
+			const {
+				state: { queue },
+				params: { index },
+			} = ctx;
 			let track: string | null;
 
-			if (ctx.params.index === 'current') {
+			if (index === 'current') {
 				const np = await queue.current();
 				track = np && np.track;
 			} else {
-				const index = parseInt(ctx.params.index);
 				[track] = await queue.tracks(index, index + 1);
 			}
 

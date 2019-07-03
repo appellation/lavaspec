@@ -6,6 +6,7 @@ export default <K extends keyof Request>(
 	schema: SchemaLike,
 	errorHandler: (err: ValidationError, ctx: Context, next: () => Promise<void>) => void = (err: ValidationError, ctx: Context) => {
 		ctx.status = 400;
+		ctx.body = err.message;
 	},
 ) => async function(ctx: Context, next: () => Promise<void>) {
 	const result = validate(ctx.request[prop], schema);
