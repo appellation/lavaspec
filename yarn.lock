@@ -413,6 +413,13 @@ debug@^3.1.0:
   dependencies:
     ms "^2.1.1"
 
+debug@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
+  integrity sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==
+  dependencies:
+    ms "^2.1.1"
+
 debug@~2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -570,7 +577,22 @@ inherits@2, inherits@2.0.3, inherits@~2.0.1:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
-ioredis@^4.0.0, ioredis@^4.2.0:
+ioredis@^4.0.0:
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/ioredis/-/ioredis-4.11.1.tgz#cf14cf923b10a772d7e1eafed89f707e05760f48"
+  integrity sha512-Qnp7ecb3WeaL7ojeSlb0UBRXmsRMMFcjM+PaAcap8FLLf1NznRD6x96/PS2DEqoRfdM9WVffAjIIYuUp+q3zEw==
+  dependencies:
+    cluster-key-slot "^1.0.6"
+    debug "^4.1.1"
+    denque "^1.1.0"
+    lodash.defaults "^4.2.0"
+    lodash.flatten "^4.4.0"
+    redis-commands "1.5.0"
+    redis-errors "^1.2.0"
+    redis-parser "^3.0.0"
+    standard-as-callback "^2.0.1"
+
+ioredis@^4.2.0:
   version "4.9.5"
   resolved "https://registry.yarnpkg.com/ioredis/-/ioredis-4.9.5.tgz#0bbba0a9faae93485d3231e1b819d2d4e23271d9"
   integrity sha512-L9MVfvX4F3LScTMEgriCGixzqinJsYy7Mt0NPX8RyuOTmx5JW0744pM4Ze2KVQcP3J0zvKYZ1LywAB6KIq7PYg==
@@ -691,9 +713,9 @@ koa@^2.7.0:
     vary "^1.1.2"
 
 lavalink@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/lavalink/-/lavalink-2.6.1.tgz#5aa38b3792d807c765199ce6d8be51b7bca04bf5"
-  integrity sha512-ByiWmGdISzFbAA3B9v1/6+1yQn2RY8/W8PR/Z6qII424pBvIMnGxns43ZpPfdRSmsxvyDThHHB5n5mPw8bnlHg==
+  version "2.8.1"
+  resolved "https://registry.yarnpkg.com/lavalink/-/lavalink-2.8.1.tgz#d7d9754509d506da53ce33e787a6498826f381a2"
+  integrity sha512-vySylUgan5Rk/kux9cK5grZX2vTs/Hgjb8JeUt7+wJPfSwmjChZAc/yPp0iCcdXrIQsOXyOptZIcqVDGrYJsBQ==
   dependencies:
     backoff "^2.5.0"
     ws "^6.0.0"
@@ -704,9 +726,9 @@ lavaplayer-track-info@^2.1.0:
   integrity sha512-ohhxiNGeClMxwNYkiOtFsJDgJVYS1qkxtgrBguhIfNs7aK0fWCUozbi+eL57VL9CV/ZSuSwOSKBdbZO0dHVbcg==
 
 lavaqueue@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/lavaqueue/-/lavaqueue-3.1.1.tgz#4409f6079f5c418fbe0a5371ab10e168b12a11ab"
-  integrity sha512-wKREPUKy0AX6iTKeMbX6ysieG4VpcZF16Oifx9Vs7Swi93JdjZQ8tiw92c+R020Ox3wvBlgqz7YJkxAiuH1/JQ==
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/lavaqueue/-/lavaqueue-3.1.2.tgz#e8f26c3c7870130437d98d2ee1628bf2cdf6ba1d"
+  integrity sha512-nMm5UL3HRzM8fyEA82DEdmwe9pYMNTFRxHOc6FkrmD2sM4qKJ3VsDR5qK54sgTqpSSHqHFSrw+vimFVQjXaNfA==
   dependencies:
     ioredis "^4.0.0"
     lavalink "^2.6.1"
@@ -761,9 +783,9 @@ ms@2.0.0:
   integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
 
 ms@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
-  integrity sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
+  integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
 nan@^2.1.0:
   version "2.14.0"
@@ -865,6 +887,11 @@ redis-commands@1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/redis-commands/-/redis-commands-1.4.0.tgz#52f9cf99153efcce56a8f86af986bd04e988602f"
   integrity sha512-cu8EF+MtkwI4DLIT0x9P8qNTLFhQD4jLfxLR0cCNkeGzs87FN6879JOJwNQR/1zD7aSYNbU0hgsV9zGY71Itvw==
+
+redis-commands@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/redis-commands/-/redis-commands-1.5.0.tgz#80d2e20698fe688f227127ff9e5164a7dd17e785"
+  integrity sha512-6KxamqpZ468MeQC3bkWmCB1fp56XL64D4Kf0zJSwDZbVLLm7KFkoIcHrgRvQ+sk8dnhySs7+yBg94yIkAK7aJg==
 
 redis-errors@^1.0.0, redis-errors@^1.2.0:
   version "1.2.0"

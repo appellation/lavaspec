@@ -4,6 +4,7 @@ import logger = require('koa-logger');
 import { Amqp } from '@spectacles/brokers';
 import Redis = require('ioredis');
 import Lavaqueue from 'lavaqueue';
+import os = require('os');
 import Client from '../src/Client';
 
 const broker = new Amqp(process.env.BROKER_GROUP || 'gateway');
@@ -14,7 +15,13 @@ const lavaqueue = new Lavaqueue({
 	hosts: {
 		redis: new Redis(process.env.REDIS_HOST || 'redis://redis'),
 		rest: process.env.LAVALINK_REST || 'http://lavalink:2333',
-		ws: process.env.LAVALINK_WS || 'ws://lavalink:2333',
+		ws: {
+			url: process.env.LAVALINK_WS || 'ws://lavalink:2333',
+			options: {
+				resumeKey: process.env.HOSTNAME || os.hostname(),
+				resumeTimeout: 1e10,
+			},
+		},
 	},
 	send: (guildID: string, packet: any) => broker.publish('SEND', {
 		guild_id: guildID,

@@ -43,8 +43,10 @@ export default class Client {
 			switch (event) {
 				case Dispatch.VOICE_STATE_UPDATE:
 					this.lavalink.voiceStateUpdate(data);
+					break;
 				case Dispatch.VOICE_SERVER_UPDATE:
 					this.lavalink.voiceServerUpdate(data);
+					break;
 			}
 		});
 	}
